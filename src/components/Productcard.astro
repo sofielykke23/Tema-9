@@ -1,0 +1,59 @@
+---
+const { product } = Astro.props;
+---
+
+<section class="card_grid">
+  <article class="product">
+    <img src={product.image} alt={"billede af " + product.imagedescr} />
+    <h2>{product.name}</h2>
+    <p>{product.price} DKK</p>
+  </article>
+</section>
+
+<style>
+  .card_grid img {
+    width: 100%;
+  }
+  .card_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .product {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .product h2 {
+    display: none;
+    position: absolute;
+    left: 3%;
+    right: 5%;
+    bottom: 3%;
+    color: #f2f0e8;
+    font-family: "Anton";
+    font-size: 200%;
+    line-height: 35px;
+  }
+  .product p {
+    display: none;
+    position: absolute;
+    left: 3%;
+    bottom: 0%;
+    color: white;
+    font-size: 110%;
+    font-family: "Inter";
+  }
+
+  .product:hover h2,
+  .product:hover p {
+    display: block;
+  }
+
+  .product img:hover {
+    filter: brightness(80%);
+  }
+</style>

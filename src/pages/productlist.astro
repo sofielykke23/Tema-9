@@ -1,0 +1,22 @@
+---
+//@ts-nocheck
+
+import Layout from "../layouts/Layout.astro";
+import Productcard from "../components/Productcard.astro";
+
+const curl = "https://qaeuprttuqpunffplzhx.supabase.co/rest/v1/products?select=*";
+const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFhZXVwcnR0dXFwdW5mZnBsemh4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjgzNTYsImV4cCI6MjA1OTg0NDM1Nn0.V0PVIIuk49xXGGPyPpFlWoNC-2QEoy3gnFM1BbX0JNE";
+
+const options = {
+  headers: {
+    apikey: apikey,
+  },
+};
+
+const data = await fetch(curl, options).then((response) => response.json());
+// console.log(data);
+---
+
+<Layout>
+  {data.map((product) => <Productcard {product} />)}
+</Layout>
