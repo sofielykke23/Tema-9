@@ -28,15 +28,198 @@ const { post } = Astro.props;
 ---
 
 <Layout>
-  <h1>{post.name}</h1>
+  <div class="single_card">
+    <div><img src={post.image} /></div>
+    <div class="indhold">
+      <h1>{post.name}</h1>
+      <p>{post.price} DKK</p>
+
+      <img src="/src/assets/detaljer.png" />
+      <p>Size: {post.size}</p>
+      <div class="knapper">
+        <div class="tal_knap"><p>- 0 +</p></div>
+        <div class="kurv_knap"><p>Læg i kurv</p></div>
+      </div>
+    </div>
+  </div>
+  <h1 class="overskrift_best">BEST SELLERS</h1>
+  <div class="best_sellers">
+    <img src="https://pleasant.dk/cdn/shop/files/upcycledcaps_closeup9_main.jpg?v=1734015813&width=1600" />
+    <img src="https://pleasant.dk/cdn/shop/files/upcycledcaps_closeup123_main.jpg?v=1734014267&width=1600" />
+    <img src="https://pleasant.dk/cdn/shop/files/upcycledcaps_closeup60_main.jpg?v=1734093686&width=1200" />
+  </div>
+  <div class="plastikfri">
+    <img src="/src/assets/strand.png" />
+    <img src="/src/assets/skjorte.png" />
+  </div>
+  <div class="strande_overskrift">
+    <h1>DU STØTTER PLASTIKFRIE STRANDE</h1>
+    <p>
+      Vi laver skjorteknapper af havplast sammen med miljøvirksomheden Strandet. Værdien i samarbejde ligger i, at Strandet forpligter sig til at samle 1 kg strand affald for hver skjorte vi sælger. Lige nu er der havplast knapper i ca. 10% af vores
+      skjorter. Målet er 100%.
+    </p>
+  </div>
 </Layout>
 
 <style>
   h1 {
     font-family: "Anton";
-    margin-left: 2%;
+    line-height: 110%;
     color: #849865;
-    font-size: 300%;
+    font-size: 350%;
     margin-bottom: 0;
+    margin-top: 1%;
+    text-transform: uppercase;
+  }
+
+  .single_card {
+    margin: 2%;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  p {
+    font-family: "Inter";
+    margin-left: 1%;
+  }
+
+  .indhold img {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 60%;
+  }
+
+  .kurv_knap {
+    background-color: #aec6d0;
+    border-radius: 50px;
+    width: 50%;
+  }
+
+  .kurv_knap p {
+    text-align: center;
+    color: white;
+  }
+
+  .tal_knap {
+    background-color: #ffffff;
+    border-radius: 50px;
+    width: 20%;
+    border: solid 1.5px #aec6d0;
+  }
+
+  .tal_knap p {
+    text-align: center;
+    color: #aec6d0;
+  }
+
+  .knapper {
+    display: flex;
+    gap: 2%;
+    margin-top: 8%; /* Hvis du vil skabe lidt luft op til */
+    margin-bottom: 15%;
+  }
+
+  .kurv_knap:hover {
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+
+  .kurv_knap p:hover {
+    color: #aec6d0;
+  }
+
+  .tal_knap:hover {
+    background-color: #aec6d0;
+  }
+
+  .tal_knap p:hover {
+    color: #ffffff;
+  }
+  .best_sellers img {
+    width: 100%;
+  }
+
+  .best_sellers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1%;
+    margin: 2%;
+  }
+
+  .overskrift_best {
+    margin-left: 2%;
+  }
+
+  .plastikfri {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1%;
+    margin-top: 5%;
+  }
+
+  .strande_overskrift {
+    margin-left: 2%;
+  }
+
+  .strande_overskrift p {
+    margin-right: 5%;
+    font-weight: 500;
+    margin-top: 2%;
+  }
+  @media (min-width: 825px) {
+    .single_card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 1%;
+      margin-bottom: 5%;
+    }
+
+    .indhold {
+      margin-left: 2%;
+    }
+
+    h1 {
+      font-size: 500%;
+    }
+
+    .indhold img {
+      margin-top: 10%;
+      margin-bottom: 10%;
+      width: 50%;
+    }
+
+    p {
+      font-size: 150%;
+      margin-left: 2%;
+    }
+
+    .best_sellers img {
+      width: 100%;
+    }
+
+    .best_sellers {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1%;
+      margin: 1%;
+    }
+
+    .overskrift_best {
+      margin-left: 1%;
+    }
+
+    .strande_overskrift {
+      margin-left: 1%;
+      font-size: 140%;
+    }
+
+    .strande_overskrift p {
+      font-weight: 500;
+      margin-top: 1%;
+      margin-left: 1%;
+      width: 80%;
+    }
   }
 </style>

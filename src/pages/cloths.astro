@@ -18,12 +18,20 @@ const data = await fetch(curl, options).then((response) => response.json());
 ---
 
 <Layout>
+  <h1>TØJ</h1>
   <section class="card_grid">
     {data.map((product) => <Productcard {product} />)}
   </section>
 </Layout>
 
 <style>
+  h1 {
+    font-family: "Anton";
+    margin-left: 2%;
+    color: #849865;
+    font-size: 300%;
+    margin-bottom: -2%;
+  }
   .card_grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -35,6 +43,12 @@ const data = await fetch(curl, options).then((response) => response.json());
     .card_grid {
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       margin: 1%;
+    }
+
+    h1 {
+      margin-left: 1%;
+      font-size: 500%;
+      margin-bottom: 0;
     }
   }
 </style>
