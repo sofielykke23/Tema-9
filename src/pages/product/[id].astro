@@ -1,0 +1,42 @@
+---
+//@ts-nocheck
+
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const curl = "https://qaeuprttuqpunffplzhx.supabase.co/rest/v1/products?select=*";
+  const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFhZXVwcnR0dXFwdW5mZnBsemh4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjgzNTYsImV4cCI6MjA1OTg0NDM1Nn0.V0PVIIuk49xXGGPyPpFlWoNC-2QEoy3gnFM1BbX0JNE";
+
+  const options = {
+    headers: {
+      apikey: apikey,
+    },
+  };
+  const response = await fetch(curl, options);
+  const data = await response.json();
+
+  return data.map((post) => {
+    return {
+      params: { id: post.id },
+      props: { post },
+    };
+  });
+}
+
+const { id } = Astro.params;
+const { post } = Astro.props;
+---
+
+<Layout>
+  <h1>{post.name}</h1>
+</Layout>
+
+<style>
+  h1 {
+    font-family: "Anton";
+    margin-left: 2%;
+    color: #849865;
+    font-size: 300%;
+    margin-bottom: 0;
+  }
+</style>
