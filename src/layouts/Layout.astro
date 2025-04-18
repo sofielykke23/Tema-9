@@ -16,12 +16,9 @@ import "../css/style.css";
     <header>
       <div class="menu">
         <div class="logo">
-          <img src="https://pleasant.dk/cdn/shop/files/pleasant_logo_22488a6e-43b5-45ec-af04-b902170d456b.png?v=1614306557&width=240" alt="Pleasant logo" />
+          <a href="/"><img src="https://pleasant.dk/cdn/shop/files/pleasant_logo_22488a6e-43b5-45ec-af04-b902170d456b.png?v=1614306557&width=240" alt="Pleasant logo" /></a>
         </div>
-        <div class="search">
-          <input type="text" class="search-input" placeholder="Søg..." />
-        </div>
-        <div class="kurv"><img src="/src/assets/kurv.png" /></div>
+
         <nav>
           <label for="burger-toggle" class="burger-menu">&#9776;</label>
 
@@ -49,10 +46,42 @@ import "../css/style.css";
           </ul>
         </nav>
       </div>
-      <main>
-        <slot />
-      </main>
     </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <div class="footer">
+        <div>
+          <img src="/src/assets/pleasanthvid.png" />
+          <p>Pleasant er et tøjmærke, der upcycler og laver nyt tøj af brugt tekstil. God stil. God samvittighed.</p>
+          <p>webshop@pleasant.dk</p>
+          <p>Svartid 1-2 hverdage</p>
+          <p>CVR-nr: 42943274</p>
+          <p>Copyright 2025, Pleasant.</p>
+        </div>
+        <div>
+          <h3>Links</h3>
+          <p>Style guide</p>
+          <p>Community</p>
+          <p>Forhandlere</p>
+          <p>Kontakt</p>
+          <p>Returportal</p>
+          <p>Handelsbetingelser</p>
+          <p>Privatlivspolitik (GDPR)</p>
+        </div>
+        <div>
+          <h3>Pleasant Community</h3>
+          <form>
+            <div class="input-row">
+              <label for="email">Email</label>
+              <button type="submit">Tilmeld</button>
+            </div>
+            <input type="email" id="email" name="email" />
+          </form>
+        </div>
+      </div>
+    </footer>
   </body>
 
   <style>
