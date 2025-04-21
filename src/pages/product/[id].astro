@@ -5,6 +5,7 @@ import Layout from "../../layouts/Layout.astro";
 import strand from "../../assets/strand.png";
 import skjorte from "../../assets/skjorte.png";
 import detaljer from "../../assets/detaljer.png";
+import badge from "../../assets/plasticbadge.svg";
 
 export async function getStaticPaths() {
   const curl = "https://qaeuprttuqpunffplzhx.supabase.co/rest/v1/products?select=*";
@@ -61,6 +62,7 @@ const { post } = Astro.props;
       Vi laver skjorteknapper af havplast sammen med miljøvirksomheden Strandet. Værdien i samarbejde ligger i, at Strandet forpligter sig til at samle 1 kg strand affald for hver skjorte vi sælger. Lige nu er der havplast knapper i ca. 10% af vores
       skjorter. Målet er 100%.
     </p>
+    <img src={badge.src} class="badge" />
   </div>
 </Layout>
 
@@ -168,9 +170,16 @@ const { post } = Astro.props;
 
   .strande_overskrift p {
     margin-right: 5%;
+    margin-left: 0%;
     font-weight: 500;
     margin-top: 2%;
-    padding-bottom: 8%;
+    padding-bottom: 2%;
+  }
+
+  .badge {
+    width: 30%;
+    margin-bottom: 5%;
+    padding-left: 60%;
   }
   @media (min-width: 825px) {
     .single_card {
@@ -217,15 +226,21 @@ const { post } = Astro.props;
     .strande_overskrift {
       margin-left: 1%;
       font-size: 140%;
-      padding-bottom: 10%;
+      padding-bottom: 5%;
     }
 
     .strande_overskrift p {
       font-weight: 500;
       margin-top: 1%;
-      margin-left: 1%;
+      margin-left: 0%;
       padding-bottom: 1%;
       width: 80%;
+    }
+
+    .badge {
+      width: 25%;
+      margin-bottom: 0%;
+      padding-left: 60%;
     }
   }
 </style>
