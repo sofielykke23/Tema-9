@@ -11,16 +11,85 @@ import "../css/style.css";
     <meta name="generator" content={Astro.generator} />
     <title>Pleasant</title>
   </head>
-  <body>
-    <slot />
-  </body>
-</html>
 
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>
+  <body>
+    <header>
+      <div class="menu">
+        <div class="logo">
+          <a href="/"><img src="https://pleasant.dk/cdn/shop/files/pleasant_logo_22488a6e-43b5-45ec-af04-b902170d456b.png?v=1614306557&width=240" alt="Pleasant logo" /></a>
+        </div>
+
+        <nav>
+          <label for="burger-toggle" class="burger-menu">&#9776;</label>
+
+          <input type="checkbox" id="burger-toggle" class="burger-toggle" />
+
+          <ul class="category_list_container">
+            <li><a href="/kasketter">Kasketter</a></li>
+
+            <li>
+              <a href="/cloths">Tøj</a>
+              <ul class="submenu">
+                <li><a href="/shirts">Skjorter</a></li>
+                <li><a href="/jackets">Jakker</a></li>
+                <li><a href="/shorts">Shorts</a></li>
+              </ul>
+            </li>
+
+            <li><a href="">Livstil</a></li>
+            <li><a href="">Drops</a></li>
+            <li><a href="">Stories</a></li>
+            <li><a href="">Hvorfor vælge Pleasant?</a></li>
+            <li><a href="">Styleguide</a></li>
+            <li><a href="">Gensalg</a></li>
+            <li><a href="">Forhandler</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <div class="footer">
+        <div>
+          <img src="/src/assets/pleasanthvid.png" />
+          <p>Pleasant er et tøjmærke, der upcycler og laver nyt tøj af brugt tekstil. God stil. God samvittighed.</p>
+          <p>webshop@pleasant.dk</p>
+          <p>Svartid 1-2 hverdage</p>
+          <p>CVR-nr: 42943274</p>
+          <p>Copyright 2025, Pleasant.</p>
+        </div>
+        <div>
+          <h3>Links</h3>
+          <p>Style guide</p>
+          <p>Community</p>
+          <p>Forhandlere</p>
+          <p>Kontakt</p>
+          <p>Returportal</p>
+          <p>Handelsbetingelser</p>
+          <p>Privatlivspolitik (GDPR)</p>
+        </div>
+        <div>
+          <h3>Pleasant Community</h3>
+          <form>
+            <div class="input-row">
+              <label for="email">Email</label>
+              <button type="submit">Tilmeld</button>
+            </div>
+            <input type="email" id="email" name="email" />
+          </form>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</html>

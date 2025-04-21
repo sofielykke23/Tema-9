@@ -1,0 +1,54 @@
+---
+//@ts-nocheck
+
+import Layout from "../layouts/Layout.astro";
+import Productcard from "../components/Productcard.astro";
+
+const curl = "https://qaeuprttuqpunffplzhx.supabase.co/rest/v1/products?product_category=eq.shorts";
+const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFhZXVwcnR0dXFwdW5mZnBsemh4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjgzNTYsImV4cCI6MjA1OTg0NDM1Nn0.V0PVIIuk49xXGGPyPpFlWoNC-2QEoy3gnFM1BbX0JNE";
+
+const options = {
+  headers: {
+    apikey: apikey,
+  },
+};
+
+const data = await fetch(curl, options).then((response) => response.json());
+// console.log(data);
+---
+
+<Layout>
+  <h1>SHORTS</h1>
+  <section class="card_grid">
+    {data.map((product) => <Productcard {product} />)}
+  </section>
+</Layout>
+
+<style>
+  h1 {
+    font-family: "Anton";
+    margin-left: 2%;
+    color: #849865;
+    font-size: 300%;
+    margin-bottom: -2%;
+  }
+  .card_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin: 2%;
+  }
+
+  @media (min-width: 825px) {
+    .card_grid {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      margin: 1%;
+    }
+
+    h1 {
+      margin-left: 1%;
+      font-size: 500%;
+      margin-bottom: 0;
+    }
+  }
+</style>

@@ -2,25 +2,17 @@
 const { product } = Astro.props;
 ---
 
-<section class="card_grid">
+<a href={"product/" + product.id}>
   <article class="product">
     <img src={product.image} alt={"billede af " + product.imagedescr} />
     <h2>{product.name}</h2>
     <p>{product.price} DKK</p>
   </article>
-</section>
+</a>
 
 <style>
-  .card_grid img {
-    width: 100%;
-  }
-  .card_grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+  .product img {
+    max-width: 100%;
   }
   .product {
     position: relative;
@@ -30,13 +22,13 @@ const { product } = Astro.props;
   .product h2 {
     display: none;
     position: absolute;
-    left: 3%;
+    left: 4%;
     right: 5%;
-    bottom: 3%;
+    bottom: 6%;
     color: #f2f0e8;
     font-family: "Anton";
-    font-size: 200%;
-    line-height: 35px;
+    font-size: 180%;
+    line-height: 32px;
   }
   .product p {
     display: none;
@@ -55,5 +47,20 @@ const { product } = Astro.props;
 
   .product img:hover {
     filter: brightness(80%);
+  }
+
+  @media (min-width: 825px) {
+    .product h2 {
+      left: 4%;
+      right: 5%;
+      bottom: 4%;
+      font-size: 400%;
+      line-height: 65px;
+    }
+    .product p {
+      left: 4%;
+      bottom: 0%;
+      font-size: 200%;
+    }
   }
 </style>
