@@ -2,6 +2,9 @@
 //@ts-nocheck
 
 import Layout from "../../layouts/Layout.astro";
+import strand from "../../assets/strand.png";
+import skjorte from "../../assets/skjorte.png";
+import detaljer from "../../assets/detaljer.png";
 
 export async function getStaticPaths() {
   const curl = "https://qaeuprttuqpunffplzhx.supabase.co/rest/v1/products?select=*";
@@ -34,7 +37,7 @@ const { post } = Astro.props;
       <h1>{post.name}</h1>
       <p>{post.price} DKK</p>
 
-      <img src="/src/assets/detaljer.png" />
+      <img src={detaljer.src} />
       <p>Size: {post.size}</p>
       <div class="knapper">
         <div class="tal_knap"><p>- 0 +</p></div>
@@ -49,8 +52,8 @@ const { post } = Astro.props;
     <img src="https://pleasant.dk/cdn/shop/files/upcycledcaps_closeup60_main.jpg?v=1734093686&width=1200" />
   </div>
   <div class="plastikfri">
-    <img src="/src/assets/strand.png" />
-    <img src="/src/assets/skjorte.png" />
+    <img src={strand.src} />
+    <img src={skjorte.src} />
   </div>
   <div class="strande_overskrift">
     <h1>DU STØTTER PLASTIKFRIE STRANDE</h1>
