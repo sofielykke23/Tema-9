@@ -1,5 +1,0 @@
-[[redirects]]
-from = "/product/*"
-to = "/product/:splat/"
-status = 301
-force = true
