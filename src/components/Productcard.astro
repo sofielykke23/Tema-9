@@ -2,7 +2,7 @@
 const { product } = Astro.props;
 ---
 
-<a href={"product/" + product.id}>
+<a href={`/product/${product.id}/`}>
   <article class="product">
     <img src={product.image} alt={"billede af " + product.imagedescr} />
     <h2>{product.name}</h2>
