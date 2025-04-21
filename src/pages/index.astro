@@ -12,8 +12,8 @@ import brugttekstil from "../assets/brugttekstil.png";
   <div class="hero_grid">
     <img src={hero1.src} alt="Billede af skjorter" />
     <img src={hero2.src} alt="Billede af tøj" />
-    <h1 class="upcycled">UPCYCLED</h1>
   </div>
+  <h1 class="upcycled">UPCYCLED</h1>
   <div class="tekst_grid">
     <p>Pleasant er et tøjmærke, der upcycler og laver nyt tøj af brugt tekstil.</p>
     <h2>CLOTHING BRAND</h2>
@@ -61,14 +61,14 @@ import brugttekstil from "../assets/brugttekstil.png";
   }
 
   .upcycled {
-    position: absolute;
-    top: 25%;
-    left: 1%;
-    right: 5%;
-    text-align: center;
+    padding-left: 1%;
+    padding-bottom: 0%;
     color: #849865;
-    font-size: 725%;
+    font-size: 720%;
     font-family: "Anton";
+    margin: 0%;
+    margin-bottom: 0%;
+    margin-top: 0%;
   }
 
   h1 {
@@ -78,24 +78,25 @@ import brugttekstil from "../assets/brugttekstil.png";
   }
 
   .tekst_grid {
-    margin-top: 15%;
+    margin-top: -5%;
     margin-left: 2%;
     margin-right: 2%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5%;
+    padding: 0%;
   }
 
   .tekst_grid p {
     font-family: "Inter";
     font-weight: 600;
-    font-size: 90%;
+    font-size: 80%;
   }
 
   .tekst_grid h2 {
     font-family: "Anton";
     margin: 0%;
-    font-size: 200%;
+    font-size: 250%;
     white-space: nowrap;
     color: #849865;
   }
@@ -150,6 +151,7 @@ import brugttekstil from "../assets/brugttekstil.png";
     margin-left: 2%;
     margin-bottom: 1%;
     line-height: 110%;
+    margin-top: 0%;
   }
 
   .hvorfor {
@@ -187,15 +189,13 @@ import brugttekstil from "../assets/brugttekstil.png";
 
   @media (min-width: 825px) {
     .upcycled {
-      top: 65%;
-      left: 0%;
-      right: 5%;
-      font-size: 2360%;
+      font-size: 2340%;
       font-family: "Anton";
+      margin-bottom: -8%;
     }
 
     .tekst_grid {
-      margin-top: 16%;
+      margin-top: 0%;
       margin-left: 2%;
       margin-right: 2%;
       display: grid;
